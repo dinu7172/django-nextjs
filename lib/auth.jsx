@@ -17,6 +17,7 @@ export async function getRefreshToken(){
 
 export async function setToken(authToken){
     const cookieStore = await cookies();
+    console.log("")
     await cookieStore.set({
         name: TOKEN_NAME, 
         value: authToken,

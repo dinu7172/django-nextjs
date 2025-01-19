@@ -20,6 +20,7 @@ const LoginForm = () => {
             },
             body: jsonData
         }
+        console.log("")
         const response = await fetch(login_url, requestOptions)
         if(!response.ok){
             const data = await response.json();

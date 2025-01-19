@@ -12,6 +12,7 @@ export default function Page() {
     // const data = await response.json()
     console.log(data)
   }
+  console.log("")
   const handleClick = async () => {
     await getData()
   }

@@ -23,6 +23,7 @@ export async function GET(request){
         if(!response.ok){
             status = 401;
         }
+        console.log("")
         return NextResponse.json({...result}, {status: status});
     } catch (error) {
         console.error('Error fetching waitlists:', error);

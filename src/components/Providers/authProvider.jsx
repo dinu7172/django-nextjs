@@ -5,6 +5,7 @@ const AuthContext = createContext(null)
 
 export function AuthProvider({children}){
     const isAuthenticated = true
+    console.log("")
     return <AuthContext.Provider value={{isAuthenticated}}>
         {children}
     </AuthContext.Provider>

@@ -9,6 +9,7 @@ export default function Home() {
   const auth = useAuth()
   const {data, error, isLoading} = useSWR("http://127.0.0.1:8001/api/hello", fetcher)
   async function getData() {
+    console.log("")
     const response = await fetch("http://127.0.0.1:8001/api/hello")
     if(response.ok){
       const data = await response.json()

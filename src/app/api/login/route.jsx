@@ -28,7 +28,7 @@ export async function POST(request) {
             return NextResponse.json({"loggIn": true}, { status: 200 });
         }
         return NextResponse.json({"loggIn": false, ...responseData}, { status: 400 });
-        
+        console.log("")
     } catch (error) {
         console.error(error);
         return NextResponse.json({ error: 'An error occurred' }, { status: 500 });
