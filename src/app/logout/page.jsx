@@ -1,11 +1,14 @@
 "use client"
 import { useRouter } from 'next/navigation'
 import React from 'react'
+import { useAuth } from '../../components/authProvider'
+
 
 let logoutUrl = '/api/logout'
 
 const page = () => {
     const router = useRouter();
+    const auth = useAuth()
     const handleClick = async (e) => {
         e.preventDefault()
         try {
@@ -21,6 +24,7 @@ const page = () => {
             console.log("")
             if(res.ok){
                 console.log("Logged Out!")
+                auth.logout()
                 router.replace("/login")
             }
         } catch (error) {

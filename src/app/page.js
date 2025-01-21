@@ -1,7 +1,6 @@
 "use client"
-
-import { useAuth } from "@/components/Providers/authProvider";
 import useSWR from "swr";
+import { useAuth } from "../components/authProvider";
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 

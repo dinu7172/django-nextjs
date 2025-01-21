@@ -1,11 +1,13 @@
 "use client"
 
 import { useRouter } from "next/navigation";
+import { useAuth } from "../../components/authProvider";
 
 // const login_url = "http://127.0.0.1:8000/api/token/pair"
 const login_url = "/api/login/"
 const LoginForm = () => {
     const router  = useRouter();
+    const auth = useAuth();
     const handleSubmit = async (e) => {
         e.preventDefault();
         // Handle login logic here
@@ -28,6 +30,7 @@ const LoginForm = () => {
         }
         if(response.ok){
             console.log("Login successful!")
+            auth.login()
             router.replace('/')
         }
     };
